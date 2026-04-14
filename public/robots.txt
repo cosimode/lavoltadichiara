@@ -1,0 +1,22 @@
+# robots.txt per lavoltadichiara.it - Gennaio 2026
+
+User-agent: *
+Allow: /
+
+# Protezione area riservata ospiti (QR Code in struttura)
+# Impedisce che i dettagli privati per gli ospiti finiscano nei risultati di ricerca
+Disallow: /ospiti-leopardi-z92x/
+
+# Impedisce l'indicizzazione di eventuali pagine di test o file di sistema
+Disallow: /_astro/
+Disallow: /private/
+
+# Istruzioni per AI Scrapers (Opzionale)
+# Impedisce ai bot di addestramento AI (come GPTBot) di scaricare le tue immagini originali
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+
+# Ottimizzazione per motori di ricerca
+Sitemap: https://lavoltadichiara.it/sitemap-index.xml

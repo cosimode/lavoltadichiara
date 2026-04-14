@@ -1,0 +1,592 @@
+---
+// src/pages/index.astro
+---
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>La Volta di Chiara | Casa Vacanze Roccaforzata (TA) | Puglia</title>
+    <meta name="description" content="Casa Vacanze La Volta di Chiara a Roccaforzata, Taranto. Soggiorni indipendenti in Puglia con camere moderne, terrazzo, cucina completa e WiFi." />
+
+    <meta name="keywords" content="casa vacanze roccaforzata, affitto breve roccaforzata, casa vacanze taranto, alloggio puglia, casa vacanze provincia taranto, dove dormire roccaforzata" />
+
+    <meta property="og:title" content="La Volta di Chiara | Casa Vacanze Roccaforzata (TA)" />
+    <meta property="og:description" content="Casa Vacanze di charme a Roccaforzata, provincia di Taranto. Appartamenti indipendenti nel cuore della Puglia." />
+    <meta property="og:type" content="website" /><link rel="canonical" href="https://lavoltadichiara.it/" />
+
+    <!-- Geo Meta Tags -->
+    <meta name="geo.region" content="IT-TA" />
+    <meta name="geo.placename" content="Roccaforzata" />
+    <meta name="geo.position" content="40.450122;17.568889" />
+    <meta name="ICBM" content="40.450122, 17.568889" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business" />
+    <meta property="og:url" content="https://lavoltadichiara.it/" />
+    <meta property="og:image" content="https://lavoltadichiara.it/images/hero-facciata.webp" />
+    <meta property="business:contact_data:street_address" content="Via Giacomo Leopardi 1" />
+    <meta property="business:contact_data:locality" content="Roccaforzata" />
+    <meta property="business:contact_data:region" content="Taranto" />
+    <meta property="business:contact_data:postal_code" content="74020" />
+    <meta property="business:contact_data:country_name" content="Italy" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VacationRental",
+            "@id": "https://lavoltadichiara.it/#vacationrental",
+            "name": "La Volta di Chiara",
+            "alternateName": ["Casa Vacanze La Volta di Chiara", "Appartamenti La Volta di Chiara"],
+            "description": "Casa vacanze di prestigio a Roccaforzata. Camere indipendenti con cucina completa e lavanderia, ideale per soggiorni in autonomia in Puglia.",
+            "image": [
+                "https://lavoltadichiara.it/images/hero-facciata.webp"
+            ],
+            "url": "https://lavoltadichiara.it",
+            "telephone": "+393895804105",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Via Giacomo Leopardi 1",
+                "addressLocality": "Roccaforzata",
+                "postalCode": "74020",
+                "addressRegion": "TA",
+                "addressCountry": "IT"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.450122",
+                "longitude": "17.568889"
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Roccaforzata"
+                },
+                {
+                    "@type": "City",
+                    "name": "Francavilla Fontana"
+                },
+                {
+                    "@type": "City",
+                    "name": "San Marzano di San Giuseppe"
+                },
+                {
+                    "@type": "City",
+                    "name": "Grottaglie"
+                },
+                {
+                    "@type": "AdministrativeArea",
+                    "name": "Provincia di Taranto"
+                },
+                {
+                    "@type": "State",
+                    "name": "Puglia"
+                }
+            ],
+            "amenityFeature": [
+                { "@type": "LocationFeatureSpecification", "name": "WiFi Gratuito", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Cucina Completa", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Lavanderia", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Climatizzazione", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Terrazzo Privato", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Camere Indipendenti", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Parcheggio", "value": true }
+            ],
+            "knowsAbout": ["Casa Vacanze", "Affitti Brevi", "Soggiorno Puglia", "Turismo Roccaforzata"],
+            "makesOffer": {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Affitto Casa Vacanze",
+                    "description": "Alloggio intero o camere indipendenti con uso cucina"
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
+    <link rel="preload" as="image" href="/images/hero-facciata-1200.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+</head>
+
+
+<body class="pb-24 md:pb-0">
+
+<style>
+    :root {
+        --color-primary: #0f172a;
+        --color-accent: #c6a667;
+        --color-bg: #fdfcf9;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-primary);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .text-slate-600 {
+        color: dimgray !important; /* Questo sovrascrive il default di Tailwind */
+    }
+    .serif { font-family: 'Playfair Display', serif; }
+    .swiper-pagination-bullet-active { background: var(--color-accent) !important; }
+
+    /* Utility per immagini verticali 3:4 */
+    .portrait-img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+
+    /* Animazione hover */
+    .zoom-effect {
+        transition: transform 0.6s ease-out;
+    }
+    .group:hover .zoom-effect {
+        transform: scale(1.03);
+        will-change: transform;
+    }
+
+</style>
+
+
+<header class="relative h-[85vh] md:h-[95vh] flex items-center justify-center overflow-hidden bg-slate-900">
+    <picture>
+        <source
+                type="image/webp"
+                srcset="/images/hero-facciata-400.webp 400w, /images/hero-facciata-800.webp 800w, /images/hero-facciata-1200.webp 1200w, /images/hero-facciata.webp 1600w"
+                sizes="100vw"
+        />
+        <img
+                src="/images/hero-facciata.webp"
+                class="absolute inset-0 w-full h-full object-cover z-0 opacity-70"
+                alt="La Volta di Chiara - Volta Interna"
+                width="2400"
+                height="1800"
+                fetchpriority="high"
+                decoding="async"
+                loading="eager"
+        />
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-slate-900/10 to-slate-900/80 z-10"></div>
+
+    <div class="relative z-20 text-center px-6 text-white">
+        <span class="block uppercase tracking-[0.5em] text-[10px] md:text-xs mb-6 font-semibold opacity-90 font-sans">Roccaforzata · Puglia</span>
+        <h1 class="text-6xl md:text-9xl font-normal mb-8 tracking-tighter leading-none serif italic drop-shadow-2xl">
+            La Volta <span class="font-light">di Chiara</span>
+        </h1>
+
+        <div class="mt-12">
+            <div class="hidden md:inline-flex items-center gap-6 bg-white/10 backdrop-blur-md border border-white/20 px-12 py-6 rounded-full">
+                <span class="text-[10px] uppercase tracking-[0.4em] font-bold opacity-70">Info & Prenotazioni:</span>
+                <span class="phone-ui text-3xl tracking-wide">+39 389 580 4105</span>
+            </div>
+            <a href="tel:+393895804105" class="md:hidden inline-block bg-[#c5a368] text-white px-10 py-4 rounded-full font-bold text-[10px] uppercase tracking-[0.3em] shadow-2xl">
+                Contattaci ora
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-8 py-20 md:py-32">
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-24 mb-40 border-b border-slate-100 pb-24">
+        <div class="space-y-12">
+            <div>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Soggiorni Indipendenti</h2>
+                <p class="text-slate-600 leading-relaxed font-light text-base italic">
+                    La Volta di Chiara offre sistemazioni climatizzate a Roccaforzata con WiFi gratuito in tutta la struttura. Ogni camera dispone di un bagno privato moderno e di un <strong class="text-slate-900">terrazzino indipendente</strong>, ideale per momenti di relax all'aria aperta in totale riservatezza. Una delle camere è configurata per ospitare famiglie, con un letto matrimoniale e un pratico letto a castello.
+                </p>
+            </div>
+            <div>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Servizi e Autonomia</h2>
+                <p class="text-slate-600 leading-relaxed font-light text-base italic">
+                    Gli ospiti hanno pieno accesso a una <strong class="text-slate-900">cucina completa</strong> di elettrodomestici e a una zona lavanderia dedicata con lavatrice e asciugatrice professionale. Ogni camera include una Smart TV e una cassetta di sicurezza personale. La struttura è <strong class="text-slate-900">pet-friendly</strong>, pronta ad accogliere viaggiatori con cani o gatti.
+                </p>
+            </div>
+        </div>
+        <div class="space-y-12 md:pt-20">
+            <div>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Posizione Strategica</h2>
+                <p class="text-slate-600 leading-relaxed font-light text-base italic">
+                    Situata in Via Giacomo Leopardi, nel cuore del borgo, la struttura dista pochi minuti dal <strong class="text-slate-900">Museo Archeologico Nazionale MArTA</strong> di Taranto e dal celebre Quartiere delle Ceramiche di Grottaglie. Le spiagge cristalline di Pulsano e Lizzano sono raggiungibili in circa 20 minuti d'auto.
+                </p>
+            </div>
+            <div>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Esperienza Ospite</h2>
+                <p class="text-slate-600 leading-relaxed font-light text-base italic">
+                    Apprezzata per la totale indipendenza garantita dalla cucina e dalla lavanderia, La Volta di Chiara assicura un soggiorno funzionale e piacevole. La combinazione tra i <strong class="text-slate-900">terrazzini privati</strong> e l'atmosfera autentica del borgo la rende la scelta ideale per famiglie e coppie in cerca di relax e autonomia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-40 bg-white rounded-sm p-10 md:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-slate-50">
+        <div class="text-center mb-16">
+            <span class="text-[#c5a368] uppercase tracking-[0.4em] text-[15px] font-bold">L'Essenza del Soggiorno</span>
+            <h2 class="text-3xl md:text-5xl mt-4 serif italic">I Nostri Comfort</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8 text-center">
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4 v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Cucina Completa</h4>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h10a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2v-8a2 2 0 012-2zM12 2v4M8 2v4M4 2v4"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Lavanderia Pro</h4>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071a9.5 9.5 0 0113.436 0m-17.678-4.242a14.5 14.5 0 0120.486 0"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Wi-Fi</h4>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Smart TV In Camera</h4>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Cassaforte</h4>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-[#c5a368] mb-5 p-4 bg-[#fdfcf9] rounded-full border border-[#c5a368]/20"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <h4 class="font-bold text-[10px] uppercase tracking-widest mb-2 font-sans">Climatizzazione</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-40">
+        <div class="text-center mb-24">
+            <span class="text-[#c5a368] uppercase tracking-[0.5em] text-[15px] font-bold font-sans">Le Nostre Suite</span>
+            <h2 class="text-4xl md:text-6xl mt-4 italic serif">Il Riposo Perfetto</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div class="group">
+                <div class="swiper mySwiper portrait-img mb-8 shadow-xl">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-family-1-400.webp 400w, /images/camera-family-1-800.webp 800w, /images/camera-family-1-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-family-1-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Family Suite 1"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-family-2-400.webp 400w, /images/camera-family-2-800.webp 800w, /images/camera-family-2-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-family-2-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Family Suite 2"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-family-4-400.webp 400w, /images/camera-family-4-800.webp 800w, /images/camera-family-4-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-family-4-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Family Suite 4"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-3xl mb-2 serif italic">Family Suite</h3>
+                    <p class="text-[15px] uppercase tracking-[0.3em] text-[#c5a368] font-bold">Terrazzo Privato · 4 Posti Letto</p>
+                </div>
+            </div>
+
+            <div class="group pt-0 md:pt-32">
+                <div class="swiper mySwiper portrait-img mb-8 shadow-xl">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-relax-1-400.webp 400w, /images/camera-relax-1-800.webp 800w, /images/camera-relax-1-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-relax-1-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Stanza Relax 1"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-relax-2-400.webp 400w, /images/camera-relax-2-800.webp 800w, /images/camera-relax-2-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-relax-2-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Stanza Relax 2"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-relax-3-400.webp 400w, /images/camera-relax-3-800.webp 800w, /images/camera-relax-3-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-relax-3-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Stanza Relax 3"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-relax-4-400.webp 400w, /images/camera-relax-4-800.webp 800w, /images/camera-relax-4-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-relax-4-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Stanza Relax 4"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/camera-relax-5-400.webp 400w, /images/camera-relax-5-800.webp 800w, /images/camera-relax-5-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    src="/images/camera-relax-5-800.webp"
+                                    class="w-full h-full object-cover zoom-effect"
+                                    alt="Stanza Relax 5"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-3xl mb-2 serif italic">Stanza Relax</h3>
+                    <p class="text-[15px] uppercase tracking-[0.3em] text-[#c5a368] font-bold">Buon Gusto  · Pet Friendly · Smart TV</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-40">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+            <div class="md:col-span-5">
+                <img
+                        srcset="/images/borgo-esterno-1-400.webp 400w, /images/borgo-esterno-1-800.webp 800w, /images/borgo-esterno-1-1200.webp 1200w"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        src="/images/borgo-esterno-1-800.webp"
+                        class="portrait-img shadow-2xl"
+                        alt="Esterno Borgo Roccaforzata"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async"
+                />
+            </div>
+            <div class="md:col-span-7 md:pl-12">
+                <span class="text-[#c5a368] uppercase tracking-[0.4em] text-[15px] font-bold">Il Territorio</span>
+                <h2 class="text-4xl md:text-5xl mt-4 mb-8 serif italic">Nel Cuore della Puglia</h2>
+                <p class="text-slate-600 leading-relaxed font-light italic mb-8">
+                    Roccaforzata è una perla nascosta. La nostra posizione in Via Giacomo Leopardi vi permette di vivere il borgo come residenti, a pochi chilometri dalle spiagge dorate della Marina di Pulsano e dalle botteghe di Grottaglie.
+                </p>
+                <div class="h-[1px] w-20 bg-[#c5a368] mb-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-40">
+        <div class="text-center mb-24">
+            <span class="text-[#c5a368] uppercase tracking-[0.5em] text-[15px] font-bold font-sans">Spazi Comuni</span>
+            <h2 class="text-4xl md:text-6xl mt-4 italic serif">Cucina & Praticità</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="space-y-12">
+                <div class="swiper mySwiper portrait-img shadow-lg">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/cucina-completa-1-400.webp 400w, /images/cucina-completa-1-800.webp 800w, /images/cucina-completa-1-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 450px"
+                                    src="/images/cucina-completa-1-800.webp"
+                                    class="w-full h-full object-cover"
+                                    alt="Cucina completa 1"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/cucina-completa-2-400.webp 400w, /images/cucina-completa-2-800.webp 800w, /images/cucina-completa-2-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 450px"
+                                    src="/images/cucina-completa-2-800.webp"
+                                    class="w-full h-full object-cover"
+                                    alt="Cucina completa 2"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/cucina-completa-3-400.webp 400w, /images/cucina-completa-3-800.webp 800w, /images/cucina-completa-3-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 450px"
+                                    src="/images/cucina-completa-3-800.webp"
+                                    class="w-full h-full object-cover"
+                                    alt="Cucina completa 3"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                        <div class="swiper-slide">
+                            <img
+                                    srcset="/images/cucina-completa-4-400.webp 400w, /images/cucina-completa-4-800.webp 800w, /images/cucina-completa-4-1200.webp 1200w"
+                                    sizes="(max-width: 768px) 100vw, 450px"
+                                    src="/images/cucina-completa-4-800.webp"
+                                    class="w-full h-full object-cover"
+                                    alt="Cucina completa 4"
+                                    width="800"
+                                    height="1067"
+                                    loading="lazy"
+                                    decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div>
+                    <h4 class="text-2xl serif italic mb-4">Cucina Moderna</h4>
+                    <p class="text-sm text-slate-500 font-light italic text-[19px]">Completamente attrezzata per preparare le vostre colazioni e cene in totale libertà.</p>
+                </div>
+            </div>
+
+            <div class="space-y-12 md:mt-24">
+                <img
+                        srcset="/images/lavanderia-pro-400.webp 400w, /images/lavanderia-pro-800.webp 800w, /images/lavanderia-pro-1200.webp 1200w"
+                        sizes="(max-width: 768px) 100vw, 450px"
+                        src="/images/lavanderia-pro-800.webp"
+                        class="portrait-img shadow-lg"
+                        alt="Zona Lavanderia Professionale"
+                        width="800"
+                        height="1067"
+                        loading="lazy"
+                        decoding="async"
+                />
+                <div>
+                    <h4 class="text-2xl serif italic mb-4">Zona Lavanderia</h4>
+                    <p class="text-sm text-slate-500 font-light italic text-[19px]">Uno spazio dedicato con attrezzature professionali a disposizione dei nostri ospiti per soggiorni lunghi e confortevoli.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#0f172a] rounded-sm p-10 md:p-24 text-white grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative overflow-hidden">
+        <div class="z-10">
+            <h2 class="text-4xl md:text-6xl mb-8 leading-tight italic serif">Vi aspettiamo</h2>
+            <p class="text-white/60 font-light leading-relaxed mb-12 text-sm font-sans uppercase tracking-[0.3em]">Via Giacomo Leopardi, 1<br/>Roccaforzata (TA)</p>
+            <div class="flex flex-col gap-6">
+                <div>
+                    <span class="text-[9px] uppercase tracking-[0.4em] text-[#c5a368] font-bold mb-2 block">Prenotazioni</span>
+                    <span class="phone-ui text-3xl tracking-wide">+39 389 580 4105</span>
+                </div>
+                <a href="https://wa.me/393895804105" class="inline-block bg-[#c5a368] text-white text-center py-4 rounded-sm font-bold text-[10px] uppercase tracking-[0.3em] w-fit px-12 transition-colors hover:bg-white hover:text-[#0f172a]">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="w-full h-[500px] rounded-sm overflow-hidden shadow-2xl z-10 bg-slate-800">
+            <iframe
+                    title="Mappa La Volta di Chiara"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.548773489123!2d17.3934563!3d40.4431234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1346f906411f5e8b%3A0x6b1f6d33f44358a!2sVia%20Giacomo%20Leopardi%2C%201%2C%2074020%20Roccaforzata%20TA!5e0!3m2!1sit!2sit!4v1710000000000"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+            </iframe>
+        </div>
+    </section>
+</main>
+
+<footer class="py-24 px-8 text-center bg-white border-t border-slate-100 serif italic">
+    <h2 class="text-4xl">La Volta di Chiara</h2>
+    <div class="w-8 h-[1px] bg-[#c5a368] mx-auto mt-6 mb-8"></div>
+
+    <div class="flex justify-center gap-12 text-[15px] font-bold uppercase tracking-[0.4em] text-slate-400 font-sans italic">
+        <a href="https://wa.me/393895804105" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-50 text-[11px] uppercase tracking-[0.15em] text-slate-600 font-sans not-italic">
+        <p class="mb-3 font-semibold text-slate-700">
+            © 2026 La Volta di Chiara — P.IVA [INSERIRE_PIVA]
+        </p>
+        <div class="flex justify-center items-center gap-4">
+            <a href="/privacy" class="hover:text-[#c5a368] transition-colors underline decoration-slate-200 underline-offset-4">
+                Privacy Policy
+            </a>
+            <span class="text-slate-300 text-lg leading-none">•</span>
+            <span class="opacity-80">
+            </span>
+        </div>
+    </div>
+</footer>
+
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-white/95 backdrop-blur-xl border-t border-slate-100 md:hidden z-50">
+    <div class="flex gap-2">
+        <a href="tel:+393895804105" class="flex-1 bg-[#0f172a] text-white py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.3em] text-center">Chiama</a>
+        <a href="https://wa.me/393895804105" class="flex-1 bg-[#c5a368] text-white py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.3em] text-center">WhatsApp</a>
+    </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+        new Swiper(".mySwiper", {
+            loop: true,
+            speed: 800,
+            preloadImages: false,
+            lazy: { loadPrevNext: true },
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", dynamicBullets: true, clickable: true },
+        });
+    });
+</script>
+
+</body>
+</html>
