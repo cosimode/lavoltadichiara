@@ -202,6 +202,133 @@
     iframe[title="Mappa La Volta di Chiara"] {
         filter: grayscale(0.2) contrast(1.1);
     }
+
+    /* --- Pulsanti Contatto (Chiama / WhatsApp) --- */
+    .contact-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.85rem 1.25rem;
+        border-radius: 9999px;
+        font-family: 'Montserrat', sans-serif;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+    .contact-btn:active {
+        transform: scale(0.97);
+    }
+    .contact-btn__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    .contact-btn__text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+        text-align: left;
+    }
+    .contact-btn__label {
+        font-size: 8px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.65;
+        font-weight: 600;
+    }
+    .contact-btn__number {
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        font-weight: 700;
+    }
+
+    /* Variante primaria (oro) */
+    .contact-btn--primary {
+        background: #c5a368;
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(197, 163, 104, 0.35);
+    }
+    .contact-btn--primary .contact-btn__icon {
+        background: rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+    }
+    .contact-btn--primary:hover {
+        background: #b3915b;
+    }
+
+    /* Variante secondaria (vetro scuro) */
+    .contact-btn--secondary {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #ffffff;
+    }
+    .contact-btn--secondary .contact-btn__icon {
+        background: rgba(255, 255, 255, 0.14);
+        color: #c5a368;
+    }
+    .contact-btn--secondary:hover {
+        background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* Variante WhatsApp piena */
+    .contact-btn--whatsapp {
+        background: #25D366;
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+    .contact-btn--whatsapp .contact-btn__icon {
+        background: rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+    }
+    .contact-btn--whatsapp:hover {
+        background: #1ebe5a;
+    }
+
+    /* Variante WhatsApp outline (per contesti scuri, secondo numero) */
+    .contact-btn--whatsapp-outline {
+        background: transparent;
+        border: 1.5px solid #25D366;
+        color: #25D366;
+    }
+    .contact-btn--whatsapp-outline .contact-btn__icon {
+        background: rgba(37, 211, 102, 0.12);
+        color: #25D366;
+    }
+    .contact-btn--whatsapp-outline:hover {
+        background: rgba(37, 211, 102, 0.1);
+    }
+
+    /* Variante scura (per sfondi chiari, es. dropdown header desktop) */
+    .contact-btn--dark-outline {
+        background: transparent;
+        border: 1.5px solid rgba(15, 23, 42, 0.15);
+        color: #0f172a;
+    }
+    .contact-btn--dark-outline .contact-btn__icon {
+        background: rgba(197, 163, 104, 0.12);
+        color: #c5a368;
+    }
+    .contact-btn--dark-outline:hover {
+        background: rgba(15, 23, 42, 0.04);
+    }
+
+    /* Pulsanti compatti per la barra sticky mobile */
+    .contact-btn--compact {
+        padding: 0.65rem 0.5rem;
+        border-radius: 0.5rem;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .contact-btn--compact .contact-btn__icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    .contact-btn--compact .contact-btn__number {
+        font-size: 12px;
+    }
 </style>
 
 
@@ -231,21 +358,33 @@
             La Volta <span class="font-light">di Chiara</span>
         </h1>
 
-        <div class="mt-4 mb-8">
+        <div class="mt-4 mb-8 w-full flex flex-col items-center">
             <div class="hidden md:inline-flex flex-col gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-10 py-4 rounded-2xl">
                 <span class="text-[9px] uppercase tracking-[0.4em] font-bold opacity-70">Info & Prenotazioni:</span>
                 <div class="flex items-center gap-6">
-                    <a href="tel:+393895804105" class="phone-ui text-xl tracking-wide hover:text-[#c5a368] transition-colors">+39 389 580 4105</a>
-                    <span class="opacity-30">|</span>
                     <a href="tel:+393773772210" class="phone-ui text-xl tracking-wide hover:text-[#c5a368] transition-colors">+39 377 377 2210</a>
+                    <span class="opacity-30">|</span>
+                    <a href="tel:+393895804105" class="phone-ui text-xl tracking-wide hover:text-[#c5a368] transition-colors">+39 389 580 4105</a>
                 </div>
             </div>
-            <div class="md:hidden flex flex-col gap-3 max-w-xs mx-auto">
-                <a href="tel:+393895804105" class="inline-block bg-[#c5a368] text-white px-8 py-4 rounded-full font-bold text-[10px] uppercase tracking-[0.3em] shadow-2xl">
-                    Chiama 389 580 4105
+            <div class="md:hidden flex flex-col gap-3 w-full max-w-xs mx-auto">
+                <a href="tel:+393773772210" class="contact-btn contact-btn--primary">
+                    <span class="contact-btn__icon">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                    </span>
+                    <span class="contact-btn__text">
+                        <span class="contact-btn__label">Chiamaci</span>
+                        <span class="contact-btn__number">+39 377 377 2210</span>
+                    </span>
                 </a>
-                <a href="tel:+393773772210" class="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-[10px] uppercase tracking-[0.3em] shadow-2xl">
-                    Chiama 377 377 2210
+                <a href="tel:+393895804105" class="contact-btn contact-btn--secondary">
+                    <span class="contact-btn__icon">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                    </span>
+                    <span class="contact-btn__text">
+                        <span class="contact-btn__label">Chiamaci</span>
+                        <span class="contact-btn__number">+39 389 580 4105</span>
+                    </span>
                 </a>
             </div>
         </div>
@@ -290,7 +429,7 @@
                 </p>
             </div>
             <div>
-                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Servizi e Autonomia</h2>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a667]">Servizi e Autonomia</h2>
                 <p class="text-slate-600 leading-relaxed font-light text-base italic">
                     Gli ospiti hanno pieno accesso a una <strong class="text-slate-900">cucina completa</strong> di elettrodomestici e a una zona lavanderia dedicata con lavatrice e asciugatrice professionale. Ogni camera include una Smart TV e una cassetta di sicurezza personale. La struttura è <strong class="text-slate-900">pet-friendly</strong>, pronta ad accogliere viaggiatori con cani o gatti.
                 </p>
@@ -298,13 +437,13 @@
         </div>
         <div class="space-y-12 md:pt-20">
             <div>
-                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Posizione Strategica</h2>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a667]">Posizione Strategica</h2>
                 <p class="text-slate-600 leading-relaxed font-light text-base italic">
                     Situata in Via Giacomo Leopardi, nel cuore del borgo, la struttura dista pochi minuti dal <strong class="text-slate-900">Museo Archeologico Nazionale MArTA</strong> di Taranto e dal celebre Quartiere delle Ceramiche di Grottaglie. Le spiagge cristalline di Pulsano e Lizzano sono raggiungibili in circa 20 minuti d'auto.
                 </p>
             </div>
             <div>
-                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a368]">Esperienza Ospite</h2>
+                <h2 class="text-3xl md:text-4xl mb-6 serif italic text-[#c5a667]">Esperienza Ospite</h2>
                 <p class="text-slate-600 leading-relaxed font-light text-base italic">
                     Apprezzata per la totale indipendenza garantita dalla cucina e dalla lavanderia, La Volta di Chiara assicura un soggiorno funzionale e piacevole. La combinazione tra i <strong class="text-slate-900">terrazzini privati</strong> e l'atmosfera autentica del borgo la rende la scelta ideale per famiglie e coppie in cerca di relax e autonomia.
                 </p>
@@ -604,19 +743,45 @@
             <h2 class="text-4xl md:text-6xl mb-8 leading-tight italic serif">Vi aspettiamo</h2>
             <p class="text-white/60 font-light leading-relaxed mb-12 text-sm font-sans uppercase tracking-[0.3em]">Via Giacomo Leopardi, 1<br/>Roccaforzata (TA)</p>
             <div class="flex flex-col gap-8">
-                <div>
-                    <span class="text-[9px] uppercase tracking-[0.4em] text-[#c5a368] font-bold mb-3 block">Prenotazioni</span>
-                    <div class="flex flex-col gap-2">
-                        <a href="tel:+393895804105" class="phone-ui text-3xl tracking-wide hover:text-[#c5a368] transition-colors block">+39 389 580 4105</a>
-                        <a href="tel:+393773772210" class="phone-ui text-3xl tracking-wide hover:text-[#c5a368] transition-colors block">+39 377 377 2210</a>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/393895804105" class="inline-block bg-[#c5a368] text-white text-center py-4 rounded-sm font-bold text-[10px] uppercase tracking-[0.3em] w-fit px-8 transition-colors hover:bg-white hover:text-[#0f172a]">
-                        WhatsApp 389
+                <div class="flex flex-col gap-3">
+                    <span class="text-[9px] uppercase tracking-[0.4em] text-[#c5a368] font-bold mb-1 block">Chiamaci</span>
+                    <a href="tel:+393773772210" class="contact-btn contact-btn--primary w-fit">
+                        <span class="contact-btn__icon">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                        </span>
+                        <span class="contact-btn__text">
+                            <span class="contact-btn__label">Linea 1</span>
+                            <span class="contact-btn__number">+39 377 377 2210</span>
+                        </span>
                     </a>
-                    <a href="https://wa.me/393773772210" class="inline-block bg-transparent border border-[#c5a368] text-[#c5a368] text-center py-4 rounded-sm font-bold text-[10px] uppercase tracking-[0.3em] w-fit px-8 transition-colors hover:bg-white hover:text-[#0f172a]">
-                        WhatsApp 377
+                    <a href="tel:+393895804105" class="contact-btn contact-btn--secondary w-fit">
+                        <span class="contact-btn__icon">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                        </span>
+                        <span class="contact-btn__text">
+                            <span class="contact-btn__label">Linea 2</span>
+                            <span class="contact-btn__number">+39 389 580 4105</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://wa.me/393773772210" class="contact-btn contact-btn--whatsapp w-fit">
+                        <span class="contact-btn__icon">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+                        </span>
+                        <span class="contact-btn__text">
+                            <span class="contact-btn__label">WhatsApp</span>
+                            <span class="contact-btn__number">377 377 2210</span>
+                        </span>
+                    </a>
+                    <a href="https://wa.me/393895804105" class="contact-btn contact-btn--whatsapp-outline w-fit">
+                        <span class="contact-btn__icon">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+                        </span>
+                        <span class="contact-btn__text">
+                            <span class="contact-btn__label">WhatsApp</span>
+                            <span class="contact-btn__number">389 580 4105</span>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -636,9 +801,25 @@
     <h2 class="text-4xl">La Volta di Chiara</h2>
     <div class="w-8 h-[1px] bg-[#c5a368] mx-auto mt-6 mb-8"></div>
 
-    <div class="flex justify-center gap-12 text-[15px] font-bold uppercase tracking-[0.4em] text-slate-400 font-sans italic">
-        <a href="https://wa.me/393895804105" target="_blank" rel="noopener">WhatsApp 389</a>
-        <a href="https://wa.me/393773772210" target="_blank" rel="noopener">WhatsApp 377</a>
+    <div class="flex flex-wrap justify-center gap-4 not-italic">
+        <a href="https://wa.me/393773772210" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp">
+            <span class="contact-btn__icon">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+            </span>
+            <span class="contact-btn__text">
+                <span class="contact-btn__label not-italic">WhatsApp</span>
+                <span class="contact-btn__number not-italic">377 377 2210</span>
+            </span>
+        </a>
+        <a href="https://wa.me/393895804105" target="_blank" rel="noopener" class="contact-btn contact-btn--dark-outline">
+            <span class="contact-btn__icon">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+            </span>
+            <span class="contact-btn__text">
+                <span class="contact-btn__label not-italic">WhatsApp</span>
+                <span class="contact-btn__number not-italic">389 580 4105</span>
+            </span>
+        </a>
     </div>
 
     <div class="mt-16 pt-8 border-t border-slate-50 text-[11px] uppercase tracking-[0.15em] text-slate-600 font-sans not-italic">
@@ -657,13 +838,33 @@
 
 <div class="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-white/95 backdrop-blur-xl border-t border-slate-100 md:hidden z-50">
     <div class="flex flex-col gap-2">
-        <div class="flex gap-2">
-            <a href="tel:+393895804105" class="flex-1 bg-[#0f172a] text-white py-3 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] text-center">Chiama 389</a>
-            <a href="tel:+393773772210" class="flex-1 bg-[#0f172a] text-white py-3 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] text-center">Chiama 377</a>
+        <div class="grid grid-cols-2 gap-2">
+            <a href="tel:+393773772210" class="contact-btn contact-btn--compact contact-btn--primary">
+                <span class="contact-btn__icon">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                </span>
+                <span class="contact-btn__number">377 377 2210</span>
+            </a>
+            <a href="tel:+393895804105" class="contact-btn contact-btn--compact contact-btn--dark-outline">
+                <span class="contact-btn__icon">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+                </span>
+                <span class="contact-btn__number">389 580 4105</span>
+            </a>
         </div>
-        <div class="flex gap-2">
-            <a href="https://wa.me/393895804105" class="flex-1 bg-[#c5a368] text-white py-3 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] text-center">WhatsApp 389</a>
-            <a href="https://wa.me/393773772210" class="flex-1 bg-[#c5a368] text-white py-3 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] text-center">WhatsApp 377</a>
+        <div class="grid grid-cols-2 gap-2">
+            <a href="https://wa.me/393773772210" class="contact-btn contact-btn--compact contact-btn--whatsapp">
+                <span class="contact-btn__icon">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+                </span>
+                <span class="contact-btn__number">377 377 2210</span>
+            </a>
+            <a href="https://wa.me/393895804105" class="contact-btn contact-btn--compact contact-btn--whatsapp-outline">
+                <span class="contact-btn__icon">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.484 1.34 5.004l-1.423 5.198 5.32-1.396a9.96 9.96 0 004.76 1.212h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.928-7.07a9.937 9.937 0 00-7.073-2.948zm5.844 15.868a8.28 8.28 0 01-5.848 2.421h-.003a8.31 8.31 0 01-4.229-1.157l-.303-.18-3.156.828.842-3.076-.198-.316a8.276 8.276 0 01-1.269-4.415c0-4.585 3.732-8.318 8.32-8.318a8.26 8.26 0 015.878 2.437 8.257 8.257 0 012.436 5.878 8.278 8.278 0 01-2.47 5.898z"/></svg>
+                </span>
+                <span class="contact-btn__number">389 580 4105</span>
+            </a>
         </div>
     </div>
 </div>
